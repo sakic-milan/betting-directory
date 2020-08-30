@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { ROUTES } from "./routes";
 import MainLayout from "./Components/MainLayout";
+import NotFound from "./Components/NotFound";
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,18 @@ const AppRouter = () => {
             />
           );
         })}
+
+        {
+          <Route
+            route="/"
+            render={() => (
+              <MainLayout>
+                <NotFound />
+              </MainLayout>
+            )}
+            key="notfound"
+          />
+        }
       </Switch>
     </Router>
   );

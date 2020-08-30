@@ -1,10 +1,16 @@
 import React from "react";
 import "./App.css";
-import MainLayout from "./Components/MainLayout";
+import "./styles.scss";
 import AppRouter from "./AppRouter";
+import { ThemeProvider } from "@material-ui/core/styles";
+import { directoryTheme } from "./directoryTheme";
 
 function App() {
-  return <AppRouter />;
+  return (
+    <ThemeProvider theme={directoryTheme}>
+      <AppRouter />
+    </ThemeProvider>
+  );
 }
 
 export default App;
